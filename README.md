@@ -1,6 +1,6 @@
 # to-do-more
 
-> Desafio Vitta front-end analist
+> A graphical representation of a task list.
 
 ## Build Setup
 
