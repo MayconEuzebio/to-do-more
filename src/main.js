@@ -4,9 +4,6 @@ import 'vue-material/dist/vue-material.css';
 import 'flexboxgrid/css/flexboxgrid.min.css';
 import Vue from 'vue';
 import VueMaterial from 'vue-material';
-// import Datepicker from 'vue-material-datepicker';
-// import Datepicker from 'vue-datepicker';
-// import Datepicker from 'vuejs-datepicker';
 import App from './App';
 
 Vue.use(VueMaterial);

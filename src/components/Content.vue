@@ -28,10 +28,19 @@
               <label>Adicionar Tag</label>
               <md-input required v-model="newTask.tag"></md-input>
             </md-input-container>
-            <!-- <datepicker lang="pt-br" format="DD/MM/YYYY"></datepicker> -->
-            <!-- <datepicker format="DD/MM/YYYY"></datepicker> -->
-            <!-- <date-picker :date="date" :limit="limit"></date-picker> -->
-            <input required type="date" v-model="newTask.date" />
+            <div class="box-datepicker">
+              <datepicker
+                class="datepicker-vmd"
+                v-model="newTask.date"
+                placeholder="Dia do evento"
+                language="pt-br"
+                input-class="datepicker-vmd datepicker-input"
+                format="dd/MM/yyyy"></datepicker>
+              <md-input-container>
+                <!-- <label>Dia do evento</label> -->
+                <md-input></md-input>
+              </md-input-container>
+            </div>
           </form>
         </md-dialog-content>
 
@@ -107,6 +116,7 @@
 
 <script>
 import moment from 'moment';
+import Datepicker from 'vuejs-datepicker';
 import storeTasks from '../utils/storeTasks';
 import storeTags from '../utils/storeTags';
 
@@ -114,6 +124,9 @@ moment.locale('pt-br');
 
 export default {
   name: 'content',
+  components: {
+    Datepicker,
+  },
   data() {
     return {
       selectedDateSmall: moment(new Date()).format('DD[/]MM[/]YYYY'),
@@ -267,6 +280,14 @@ html {
   left: 3.5%;
 }
 
+.box-datepicker{
+  position: relative;
+}
+
+.datepicker {
+  position: static;
+}
+
 .checkTask .icon {
   color: #fff;
   font-size: 16px;
@@ -324,6 +345,10 @@ html {
 
   .holder > .container {
     margin: auto;
+  }
+
+  .md-dialog.md-reference {
+    min-width: 500px !important;
   }
 }
 @media (max-width: 600px) {
