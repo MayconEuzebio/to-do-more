@@ -30,9 +30,10 @@ export default {
   width: 100%;
   position: absolute;
   left: 0;
-  bottom: 5px;
+  bottom: 1px;
   font-size: 1.15em;
   color: rgb(118, 121, 138);
+  height: calc(100% - 5px);
   z-index: 1;
 }
 
